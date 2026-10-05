@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://bg8t8movseeyv"]
 
-[node name="Hero" type="AnimatedSprite2D" unique_id=1068838695]
+[ext_resource type="Texture2D" uid="uid://dfxqum8c1srk7" path="res://sprites/Character walking (in-place, walk, run, jump, sword without special).png" id="1_3uyx6"]
+[ext_resource type="Script" uid="uid://cjys777xc43vg" path="res://scripts/hero.gd" id="1_yvbpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3byi"]
+size = Vector2(34, 66)
+
+[node name="Hero" type="CharacterBody2D" unique_id=657240652]
+script = ExtResource("1_yvbpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=632539100]
+position = Vector2(-3.0000305, 13)
+scale = Vector2(1.0347222, 0.94375)
+texture = ExtResource("1_3uyx6")
+hframes = 6
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2142147353]
+visible = false
+position = Vector2(-4, 21)
+shape = SubResource("RectangleShape2D_q3byi")
